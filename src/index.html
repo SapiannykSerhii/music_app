@@ -61,8 +61,8 @@
         <div class="col-4"><input type="text" id="searchInput" title="Type in a name"></div>
         <div class="col-4"><button type="button" class="btn-primary search-button">Search</button></div>
       </div>
-      <h3 class="search_succss"></h3>
-      <div class="songs-list"></div>
+      <h3 class="search_succss">2</h3>
+      <div class="songs-search"></div>
     </div>
     </section>
 
@@ -70,6 +70,7 @@
       <div class="discover-wrapper container">
         <h4>Discover</h4>
         <h3>Give it a try!</h3>
+        <div class="songs-discover"></div>
       </div>
   </section>
 
@@ -78,7 +79,6 @@
  <footer><p>All rights reversed</p></footer>
 
  <!-- #region SONG TEMPLATE -->
-
  <script id="template-song" type="text/x-handlebars-template">
   <div class="row">
     <div class="song">
@@ -105,6 +105,20 @@
  </script>
 
 <!-- #endregion SONG TEMPLATE -->
+<!-- #region HOMEPAGE CATEGORY LIST TEMPLATE -->
+  <script id="template-category" type="text/x-handlebars-template">
+      <li class="category">
+        <a href="#" class="category__link" data-id="{{ name }}">
+        {{ name }}
+        </a>
+      </li>
+  </script>
+<!-- #endregion -->
+<!-- #region SEARCH CATEGORY SELECT TEMPLATE  -->
+<script id="template-category-select" type="text/x-handlebars-template">
+  <option value="{{ name }}">{{ name }}</option>
+</script>
+<!-- #endregion -->
   <script src="https://cdn.jsdelivr.net/gh/greghub/green-audio-player/dist/js/green-audio-player.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.1.0/handlebars.min.js"></script>
  <script src="js/app.js" type="module"></script>

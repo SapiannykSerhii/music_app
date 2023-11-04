@@ -5,8 +5,8 @@ const app = {
   initData: function () {
     const thisApp = this;
     thisApp.data = {};
-    const url = settings.db.url + '/' + settings.db.songs;
-    fetch(url)
+    const songs = settings.db.url + '/' + settings.db.songs;
+    fetch(songs)
       .then(function (rawResponse) {
         return rawResponse.json();
       })
@@ -30,6 +30,8 @@ const app = {
       new Song(thisApp.data.songs[songData], thisApp.dom.homePage);
     }
 
+    // thisApp.initPlayer(select.player.homePage);
+
     // for search:
     const button = document.querySelector('.search-button');
     const input = document.getElementById('searchInput');
@@ -47,8 +49,9 @@ const app = {
           NumberOfSongs += 1;
         }
       }
+      thisApp.initPlayer(select.player.searchPage);
+
       input.value = '';
-      thisApp.initPlayer();
       searchMessage.innerHTML = 'We found ' + NumberOfSongs + ' songs...';
     });
 
@@ -60,7 +63,7 @@ const app = {
     new Song(thisApp.data.songs[random], thisApp.dom.discoverPage);
 
 
-    thisApp.initPlayer();
+    thisApp.initPlayer(select.player.discoverPage);
   },
 
   initPages: function () {

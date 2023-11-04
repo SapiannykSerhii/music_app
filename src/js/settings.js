@@ -10,6 +10,11 @@ export const select = {
   },
   nav: {
     links: 'main_nav a'
+  },
+  player: {
+    homePage: 'homepage-wrapper .player',
+    searchPage: '.search-wrapper .player',
+    discoverPage: '.discover-wrapper .player',
   }
 };
 
@@ -24,7 +29,8 @@ export const classNames = {
 
 export const settings = {
   db: {
-    url: '//localhost:3131',
+    // url: '//localhost:3131',
+    url: '//' + window.location.hostname + (window.location.hostname == 'localhost' ? ':3131' : ''),
     songs: 'songs'
   },
 };
