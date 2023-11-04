@@ -2,13 +2,12 @@ import { templates } from '.././settings.js';
 import utils from '.././utils.js';
 
 class Song {
-  constructor(id, data, wrapper) {
+  constructor(data, wrapper) {
     const thisSong = this;
 
-    thisSong.id = id;
     thisSong.data = data;
     thisSong.wrapper = wrapper;
-    console.log(thisSong.data);
+    // console.log(thisSong.data);
 
     thisSong.render();
   }
@@ -16,10 +15,10 @@ class Song {
   render() {
     const thisSong = this;
 
-    const generatedHTML = templates.songList(thisSong.data);
+    const generatedHTML = templates.songTemplate(thisSong.data);
 
     const songDOM = utils.createDOMFromHTML(generatedHTML);
-    console.log(songDOM);
+    // console.log(songDOM);
     thisSong.wrapper.appendChild(songDOM);
   }
 }
