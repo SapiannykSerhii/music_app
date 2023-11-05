@@ -1,5 +1,6 @@
 import { select,templates } from '.././settings.js';
 import utils from '.././utils.js';
+import HomePage from './HomePage.js';
 
 class Music {
   constructor(songs) {
@@ -16,7 +17,7 @@ class Music {
     thisMusic.generateCategories();
     thisMusic.renderCategories();
 
-    // thisMusic.pages.HomePage = new HomePage(thisMusic.data.songs, thisMusic.data.categories);
+    thisMusic.pages.HomePage = new HomePage(thisMusic.data.songs, thisMusic.data.categories);
     // thisMusic.pages.SearchPage = new SearchPage(thisMusic.data.songs);
     // thisMusic.pages.DiscoverPage = new DiscoverPage(thisMusic.data.songs, thisMusic.data.categories);
   }
