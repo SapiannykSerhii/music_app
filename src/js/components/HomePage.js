@@ -1,5 +1,5 @@
-import { select } from './../settings.js';
 import SongList from './SongList.js';
+import { select} from './../settings.js';
 import MusicPlayer from './MusicPlayer.js';
 
 class HomePage {
@@ -9,9 +9,10 @@ class HomePage {
     thisHomePage.data = {};
     thisHomePage.data.songs = songsData;
     thisHomePage.data.categories = categories;
-    // console.log(thisHomePage.data.categories);
+
     thisHomePage.getElements();
     thisHomePage.renderSongs();
+    // thisHomePage.filterByCategories();
   }
 
   getElements() {
@@ -19,11 +20,8 @@ class HomePage {
 
     thisHomePage.dom = {};
     thisHomePage.dom.wrapper = document.querySelector(select.containerOf.homePage);
-    // console.log(thisHomePage.data.wrapper);
     thisHomePage.dom.categoryList = document.querySelector(select.listOf.categories);
-    // console.log(thisHomePage.data.categoryList);
-    thisHomePage.dom.categoryLink = document.querySelectorAll(select.linksOf.categories);
-    // console.log(thisHomePage.data.categoryLink);
+    thisHomePage.dom.categoryLinks = document.querySelectorAll(select.linksOf.categories);
   }
 
   renderSongs() {

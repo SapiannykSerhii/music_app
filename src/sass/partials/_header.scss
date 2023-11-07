@@ -26,7 +26,7 @@
   @include center();
 }
 
-.main_nav {
+.main-nav {
   @include flex(row, center, center);
   position: absolute;
   bottom: $base-size * -10;

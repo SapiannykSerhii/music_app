@@ -18,8 +18,6 @@ class Music {
     thisMusic.renderCategories();
 
     thisMusic.pages.HomePage = new HomePage(thisMusic.data.songs, thisMusic.data.categories);
-    // thisMusic.pages.SearchPage = new SearchPage(thisMusic.data.songs);
-    // thisMusic.pages.DiscoverPage = new DiscoverPage(thisMusic.data.songs, thisMusic.data.categories);
   }
 
   getElements() {

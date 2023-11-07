@@ -7,36 +7,35 @@ export const select = {
   containerOf: {
     pages: '#pages',
     homePage: '.songs-home',
-    searchPage: '.song-search',
+    searchPage: '.songs-search',
     discoverPage: '.songs-discover',
     joinPage: '.join-now',
   },
   listOf: {
     categories: '.categories',
   },
-  player: {
-    homePage: 'homepage-wrapper .player',
-    searchPage: '.search-wrapper .player',
-    discoverPage: '.discover-wrapper .player',
+  nav: {
+    links: '.main-nav a, .join-button a',
   },
-  searchElement: {
+  player: {
+    homePage: '.songs-home .player',
+    searchPage: '.songs-search .player',
+    discoverPage: '.songs-discover .player',
+  },
+  searchElements: {
     button: '.search-button',
-    input: '.searchInputName',
+    input: 'searchInputName',
     text: '.search_success',
   },
   attributesOf: {
     category: 'data-id',
   },
   linksOf: {
-    categories: '.category__link'
+    categories: '.category__link',
   },
   formOf: {
-    categoriesSelect: '#categories__select'
+    categoriesSelect: '#categories__select',
   },
-  nav: {
-    links: 'main-nav a, .join-button a'
-  },
-  
 };
 
 export const classNames = {
@@ -44,17 +43,16 @@ export const classNames = {
     active: 'active',
   },
   pages: {
-    active: 'active'
+    active: 'active',
   },
   categories: {
     active: 'active',
-    isCategories: 'category__link'
+    isCategory: 'category__link',
   }
 };
 
 export const settings = {
   db: {
-    // url: '//localhost:3131',
     url: '//' + window.location.hostname + (window.location.hostname == 'localhost' ? ':3131' : ''),
     songs: 'songs',
     authors: 'authors',
