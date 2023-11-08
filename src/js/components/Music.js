@@ -1,5 +1,6 @@
 import { select,templates } from '.././settings.js';
 import utils from '.././utils.js';
+import DiscoverPage from './DiscoverPage.js';
 import HomePage from './HomePage.js';
 import SearchPage from './SearchPage.js';
 
@@ -19,7 +20,8 @@ class Music {
     thisMusic.renderCategories();
 
     thisMusic.pages.HomePage = new HomePage(thisMusic.data.songs, thisMusic.data.categories);
-    thisMusic.pages.SearchPage = new SearchPage(thisMusic.data.song);
+    thisMusic.pages.SearchPage = new SearchPage(thisMusic.data.songs);
+    thisMusic.pages.DiscoverPage = new DiscoverPage(thisMusic.data.songs, thisMusic.data.categories);
   }
 
   getElements() {
@@ -55,15 +57,15 @@ class Music {
       // console.log(category);
       const linkHtmlData = { name: category };
       const categoriesListHTML = templates.categoryTemplate(linkHtmlData);
-      const categoriesSelectHTML = templates.categorySelectTemplate(linkHtmlData);
+      const categoriesSelectsHTML = templates.categorySelectTemplate(linkHtmlData);
 
       const categoryListDOM = utils.createDOMFromHTML(categoriesListHTML);
-      const categoriesSelectsDOM = utils.createDOMFromHTML(categoriesSelectHTML);
+      const categorySelectDOM = utils.createDOMFromHTML(categoriesSelectsHTML);
 
       thisMusic.dom.categoryList.appendChild(categoryListDOM);
-      thisMusic.dom.categorySelect.appendChild(categoriesSelectsDOM);
+      thisMusic.dom.categorySelect.appendChild(categorySelectDOM);
     }
   }
-  
-}  
+
+}
 export default Music;

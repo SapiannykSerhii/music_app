@@ -35,15 +35,15 @@ class SearchPage {
     let matchedSongs = [];
 
     const categoriesSelect = document.getElementById('categories__select');
-    // console.log(selectedCategory);
+    // console.log(categoriesSelect);
     button.addEventListener('click', function () {
       utils.resetWrapper(thisSearchPage.dom.wrapper);
-      searchMessage.innerHTML = ' ';
+      searchMessage.innerHTML = '';
 
       numberOfSongs = 0;
       matchedSongs = [];
 
-      const selectedCategory = categoriesSelect.value;
+      let selectedCategory = categoriesSelect.value;
 
       if (input.value === '' && selectedCategory === 'first') {
         for (let songData in thisSearchPage.data.songs) {
@@ -76,7 +76,7 @@ class SearchPage {
 
       numberOfSongs = matchedSongs.length;
 
-      numberOfSongs == 1
+      numberOfSongs === 1
         ? searchMessage.innerHTML = `We found ${numberOfSongs} song...`
         : searchMessage.innerHTML = `We found ${numberOfSongs} song...`;
     });
